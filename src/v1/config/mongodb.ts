@@ -1,7 +1,7 @@
 import { createConnection } from "typeorm";
-import { TicketEntity } from "v1/api/ticket/entities/ticket";
+import { TicketEntity } from "v1/api/ticket/ticket.entity";
 
-const { NODE_ENV, MONGODB_URL } = process.env;
+const { NODE_ENV } = process.env;
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 const notIsPrd = NODE_ENV !== "production";
@@ -10,7 +10,7 @@ const notIsPrd = NODE_ENV !== "production";
 export const connect = () =>
 	createConnection({
 		type: "mongodb",
-		url: MONGODB_URL,
+		url: process.env.MONGODB_URL,
 		synchronize: false,
 		logging: notIsPrd,
 		entities: [TicketEntity],

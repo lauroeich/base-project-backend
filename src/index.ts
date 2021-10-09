@@ -1,7 +1,7 @@
 import Fastify from "fastify";
-import "reflect-metadata";
-import { setUserController } from "v1/api/user/controllers";
+import { setUserController } from "./v1/api/user/controllers/index";
 import { connect } from "./v1/config/mongodb";
+import "reflect-metadata";
 
 const PORT = 3000;
 

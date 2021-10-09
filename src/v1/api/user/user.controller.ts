@@ -1,5 +1,5 @@
 import { FastifyInstance, FastifyPluginAsync } from "fastify";
-import { loginController } from "v1/api/user/login/login.controller";
+import { loginController } from "./login/login.controller";
 
 // eslint-disable-next-line require-await
 const userController: FastifyPluginAsync = async fastifyInstancePlugin => {

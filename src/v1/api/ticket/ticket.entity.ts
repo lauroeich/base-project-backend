@@ -1,13 +1,13 @@
 import { Column, Entity, ObjectIdColumn } from "typeorm";
-import { ObjectID } from "mongodb";
-import { TicketTypeEnum } from "../../../types/enums/ticket-types";
+import { ObjectId } from "mongodb";
+import { TicketTypeEnum } from "../../enum/ticket-type";
 
 @Entity()
 export class TicketEntity {
 	@ObjectIdColumn({
 		name: "_id",
 	})
-	public id: ObjectID;
+	public id: ObjectId;
 
 	@Column()
 	public code: string;

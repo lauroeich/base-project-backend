@@ -1,3 +1,6 @@
+import { StatusCodeEnum } from "v1/enum/status-code";
+import { CustomError } from "./../../../utils/error";
+
 type Injectables = undefined;
 
 export interface LoginParams {
@@ -10,10 +13,10 @@ export const login = (
 	{ email, password }: LoginParams,
 ) => {
 	if (email !== "test@test.com") {
-		throw new Error("Invalid email");
+		throw new CustomError("Invalid email", StatusCodeEnum.BAD_REQUEST);
 	}
 	if (password !== "123") {
-		throw new Error("Invalid password");
+		throw new CustomError("Invalid password", StatusCodeEnum.BAD_REQUEST);
 	}
 
 	return {
